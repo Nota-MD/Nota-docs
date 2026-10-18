@@ -34,4 +34,4 @@ Nota 是一款本地优先、所见即所得，并用 Lua 扩展的 Markdown 编
 | [Nota-themes](https://github.com/Nota-MD/Nota-themes) | 官方主题 |
 | [nota-md.github.io](https://github.com/Nota-MD/nota-md.github.io) | 项目官网 |
 
-> 当前文档对应 Nota 0.6.0 Beta。
+> 当前文档对应 Nota 0.7.0 Beta。

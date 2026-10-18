@@ -14,14 +14,14 @@
 Debian / Ubuntu 使用 `.deb`：
 
 ```sh
-sudo apt install ./Nota_0.6.0-beta_amd64.deb
+sudo apt install ./Nota_0.7.0-beta_amd64.deb
 ```
 
 AppImage 添加执行权限后运行：
 
 ```sh
-chmod +x Nota_0.6.0-beta_amd64.AppImage
-./Nota_0.6.0-beta_amd64.AppImage
+chmod +x Nota_0.7.0-beta_amd64.AppImage
+./Nota_0.7.0-beta_amd64.AppImage
 ```
 
 ## Windows
