@@ -6,7 +6,6 @@
 
 - Linux：`.deb`、`.rpm` 或 `.AppImage`
 - Windows：`.exe` 安装程序
-- macOS：`.dmg`
 
 官方安装包不包含拓展和官方主题，它们需要单独安装。
 
@@ -25,12 +24,12 @@ chmod +x Nota_0.6.0-beta_amd64.AppImage
 ./Nota_0.6.0-beta_amd64.AppImage
 ```
 
-## Windows 与 macOS
+## Windows
 
-运行 `.exe` 安装程序，或打开 `.dmg` 后将 Nota 拖入应用程序目录。
+运行 `.exe` 安装程序。
 
-当前 Beta 安装包未签名。Windows SmartScreen 或 macOS Gatekeeper 可能显示安全提示；
-请确认下载地址来自 `github.com/Nota-MD/Nota`，再按系统提供的正常方式继续。
+当前 Beta 安装包未签名。Windows SmartScreen 可能显示安全提示；请确认下载地址来自
+`github.com/Nota-MD/Nota`，再按系统提供的正常方式继续。
 
 ## 第一次启动
 
