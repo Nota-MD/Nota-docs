@@ -31,6 +31,9 @@ chmod +x Nota_0.6.0-beta_amd64.AppImage
 当前 Beta 安装包未签名。Windows SmartScreen 可能显示安全提示；请确认下载地址来自
 `github.com/Nota-MD/Nota`，再按系统提供的正常方式继续。
 
+Windows 支持尚属新增，当前测试范围有限。欢迎在
+[GitHub Issues](https://github.com/Nota-MD/Nota/issues) 提交问题、兼容性信息和建议。
+
 ## 第一次启动
 
 启动后可以：
