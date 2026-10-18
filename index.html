@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nota 用户文档与开发者文档">
+    <title>Nota Docs</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Nota-MD/Nota/main/src-tauri/icons/nota.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/vue.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="app">正在载入 Nota 文档…</div>
+    <script>
+      window.$docsify = {
+        name: "Nota Docs",
+        repo: "https://github.com/Nota-MD/Nota-docs",
+        homepage: "README.md",
+        loadSidebar: true,
+        subMaxLevel: 3,
+        relativePath: true,
+        maxLevel: 4,
+        notFoundPage: false,
+        search: {
+          placeholder: "搜索文档…",
+          noData: "没有找到匹配内容。",
+        },
+        plugins: [
+          function (hook) {
+            hook.doneEach(function () {
+              const external = document.querySelectorAll('a[href^="http"]');
+              external.forEach((link) => {
+                link.target = "_blank";
+                link.rel = "noopener";
+              });
+            });
+          },
+        ],
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/plugins/search.min.js"></script>
+  </body>
+</html>

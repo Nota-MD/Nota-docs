@@ -1,0 +1,121 @@
+:root {
+  --theme-color: #e95420;
+  --base-font-family: "Ubuntu Sans", Ubuntu, system-ui, sans-serif;
+  --code-font-family: "Ubuntu Mono", monospace;
+}
+
+body {
+  color: #2e3440;
+  background: #fff;
+}
+
+.sidebar {
+  color: #2e3440;
+  background: #f7f7f7;
+  border-right: 1px solid #dcdfe4;
+}
+
+.sidebar .app-name-link {
+  color: #2e3440;
+  font-weight: 700;
+}
+
+.sidebar ul li a {
+  color: #5e6272;
+}
+
+.sidebar ul li.active > a,
+.sidebar ul li a:hover {
+  color: #e95420;
+}
+
+.markdown-section {
+  max-width: 860px;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3 {
+  color: #2e3440;
+  letter-spacing: -0.02em;
+}
+
+.markdown-section h2 {
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid #dcdfe4;
+}
+
+.markdown-section a {
+  color: #e95420;
+}
+
+.markdown-section code {
+  border-radius: 4px;
+  background: #f0f0f0;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+.markdown-section pre {
+  border: 1px solid #dcdfe4;
+  border-radius: 8px;
+  background: #f7f7f7;
+}
+
+.markdown-section blockquote {
+  border-left: 4px solid #e95420;
+  background: #f7f7f7;
+  color: #5e6272;
+}
+
+.search input {
+  border-radius: 7px;
+  font-family: "Ubuntu Sans", Ubuntu, sans-serif;
+}
+
+.search .results-panel {
+  border: 1px solid #dcdfe4;
+  border-radius: 8px;
+}
+
+.docsify-copy-code-button {
+  font-family: "Ubuntu Sans", Ubuntu, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f2f2f2;
+    background: #2c2c2c;
+  }
+
+  .sidebar {
+    color: #f2f2f2;
+    background: #383838;
+    border-right-color: #4c4c4c;
+  }
+
+  .sidebar .app-name-link,
+  .markdown-section h1,
+  .markdown-section h2,
+  .markdown-section h3 {
+    color: #f2f2f2;
+  }
+
+  .sidebar ul li a,
+  .markdown-section {
+    color: #c8c8c8;
+  }
+
+  .markdown-section h2,
+  .markdown-section pre,
+  .search .results-panel {
+    border-color: #4c4c4c;
+  }
+
+  .markdown-section code,
+  .markdown-section pre,
+  .markdown-section blockquote {
+    background: #383838;
+  }
+}
