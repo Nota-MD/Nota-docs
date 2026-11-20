@@ -7,13 +7,18 @@
 在文档主题目录创建：
 
 ```text
-paper.css
+paper/
+└── theme.css
 ```
+
+目录名 `paper` 就是主题 id。
 
 ## 2. 最小主题
 
+正文根可以使用 Typora 常见的 `#write`；Nota 会把它映射到编辑区正文根。
+
 ```css
-:root {
+#write {
   --doc-bg: #fffdf8;
   --doc-fg: #25211d;
   --fg: #25211d;

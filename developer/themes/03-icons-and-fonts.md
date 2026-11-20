@@ -6,13 +6,13 @@
 
 ```text
 ui-styles/
-├── dusk.css
-└── dusk-assets/
+└── dusk/
+    ├── theme.css
     ├── close.svg
-    └── interface-font.ttf
+    └── interface-font.woff2
 ```
 
-`dusk.css` 和资源都在 `ui-styles/` 根目录内。相对路径不能逃出这个目录。
+`theme.css` 和资源都在同一个主题包内。相对路径不能逃出 `dusk/`。
 
 ## 替换图标
 
@@ -21,12 +21,12 @@ ui-styles/
 ```css
 @font-face {
   font-family: "Dusk Interface";
-  src: url("./dusk-assets/interface-font.ttf") format("truetype");
+  src: url("./interface-font.woff2") format("woff2");
 }
 
 [data-ui-style="dusk"] {
   --font-ui: "Dusk Interface", sans-serif;
-  --icon-folio-close-symbolic: url("./dusk-assets/close.svg");
+  --icon-folio-close-symbolic: url("./close.svg");
 }
 ```
 

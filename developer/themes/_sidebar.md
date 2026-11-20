@@ -1,4 +1,5 @@
 - [主题教程](README.md)
+- [主题包规范](00-spec.md)
 - [1. 第一个界面主题](01-first-theme.md)
 - [2. 颜色与形状](02-colors-and-shape.md)
 - [3. 图标与字体](03-icons-and-fonts.md)

@@ -7,13 +7,17 @@ Nota 有两条独立主题轴：
 | 界面主题 | 菜单、侧栏、按钮、标签、状态栏、图标与界面字体 | `ui-styles/` |
 | 文档主题 | 正文页面、标题、代码块与正文排版 | `themes/` |
 
+主题使用“目录 + `theme.css` + 同目录资源”的自包含布局。完整规则见
+[主题包规范](00-spec.md)。
+
 教程顺序：
 
-1. [第一个界面主题](01-first-theme.md)
-2. [颜色与形状](02-colors-and-shape.md)
-3. [图标与字体](03-icons-and-fonts.md)
-4. [第一个文档主题](04-document-theme.md)
-5. [测试与发布](05-publishing.md)
+1. [主题包规范](00-spec.md)
+2. [第一个界面主题](01-first-theme.md)
+3. [颜色与形状](02-colors-and-shape.md)
+4. [图标与字体](03-icons-and-fonts.md)
+5. [第一个文档主题](04-document-theme.md)
+6. [测试与发布](05-publishing.md)
 
 主题不是程序补丁。不要要求 Nota 为某个主题增加专用 Rust 分支；主题应通过通用 CSS
 变量和选择器实现。

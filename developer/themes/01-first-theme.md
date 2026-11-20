@@ -6,10 +6,11 @@
 
 ```text
 ui-styles/
-└── dusk.css
+└── dusk/
+    └── theme.css
 ```
 
-文件名去掉 `.css` 后就是主题 id：`dusk`。
+目录名就是主题 id：`dusk`。
 
 ## 2. 写最小 CSS
 
