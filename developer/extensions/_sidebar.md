@@ -4,4 +4,5 @@
 - [3. 面板](03-panel.md)
 - [4. 文档与设置](04-document-and-settings.md)
 - [5. 测试与打包](05-packaging.md)
+- [6. 完整拓展示例](06-complete-demo.md)
 - [主题教程](../themes/README.md)

@@ -1,121 +1,521 @@
+@font-face {
+  font-family: "IBM Plex Sans SC";
+  src: url("../themes/document/ibm-documentation/assets/fonts/IBMPlexSansSC-Regular.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans SC";
+  src: url("../themes/document/ibm-documentation/assets/fonts/IBMPlexSansSC-SemiBold.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans SC";
+  src: url("../themes/document/ibm-documentation/assets/fonts/IBMPlexSansSC-Bold.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../themes/document/ibm-documentation/assets/fonts/IBMPlexMono-Regular.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
-  --theme-color: #e95420;
-  --base-font-family: "Ubuntu Sans", Ubuntu, system-ui, sans-serif;
-  --code-font-family: "Ubuntu Mono", monospace;
+  color-scheme: light;
+  --theme-color: #0f62fe;
+  --base-font-family: "IBM Plex Sans SC", "Noto Sans CJK SC",
+    "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+  --code-font-family: "IBM Plex Mono", "SFMono-Regular", Consolas,
+    "Liberation Mono", monospace;
+  --docs-bg: #f4f4f4;
+  --docs-surface: #ffffff;
+  --docs-sidebar: #ffffff;
+  --docs-text: #161616;
+  --docs-muted: #525252;
+  --docs-faint: #6f6f6f;
+  --docs-border: #d0d0d0;
+  --docs-border-strong: #8d8d8d;
+  --docs-subtle: #f4f4f4;
+  --docs-raised: #e8e8e8;
+  --docs-code: #262626;
+  --docs-code-text: #f4f4f4;
+  --docs-link: #0f62fe;
+  --docs-link-hover: #0043ce;
+  --docs-focus: #0f62fe;
+  --docs-selection: #a6c8ff;
+  --docs-sidebar-width: 18rem;
+  --docs-content-width: 58rem;
+  --docs-radius: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: #2e3440;
-  background: #fff;
+  color: var(--docs-text);
+  background: var(--docs-bg);
+  font-family: var(--base-font-family);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  color: #161616;
+  background: var(--docs-selection);
+}
+
+a {
+  color: var(--docs-link);
+}
+
+a:hover {
+  color: var(--docs-link-hover);
 }
 
 .sidebar {
-  color: #2e3440;
-  background: #f7f7f7;
-  border-right: 1px solid #dcdfe4;
+  width: var(--docs-sidebar-width);
+  padding: 2rem 1.25rem 3rem;
+  color: var(--docs-text);
+  background: var(--docs-sidebar);
+  border-right: 1px solid var(--docs-border);
+}
+
+.sidebar .app-name {
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
 }
 
 .sidebar .app-name-link {
-  color: #2e3440;
-  font-weight: 700;
+  display: block;
+  color: var(--docs-text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.sidebar .app-name-link::before {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--docs-link);
+  content: "Nota";
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sidebar .app-name-link img {
+  display: none;
+}
+
+.sidebar .search {
+  margin: 0 0 1.4rem;
+  border-bottom: 1px solid var(--docs-border);
+}
+
+.sidebar .search input {
+  min-height: 2.5rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--docs-text);
+  border: 1px solid var(--docs-border-strong);
+  border-radius: var(--docs-radius);
+  background: var(--docs-surface);
+  font-family: var(--base-font-family);
+  font-size: 0.875rem;
+}
+
+.sidebar .search input:focus {
+  border-color: var(--docs-focus);
+  box-shadow: inset 0 0 0 1px var(--docs-focus);
+  outline: none;
+}
+
+.sidebar .search .results-panel {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  color: var(--docs-text);
+  border: 1px solid var(--docs-border);
+  border-radius: var(--docs-radius);
+  background: var(--docs-surface);
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 12%);
+}
+
+.sidebar .search .matching-post {
+  padding: 0.65rem;
+  border-bottom: 1px solid var(--docs-border);
+}
+
+.sidebar .search .matching-post:last-child {
+  border-bottom: 0;
+}
+
+.sidebar ul {
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 0;
 }
 
 .sidebar ul li a {
-  color: #5e6272;
+  display: block;
+  padding: 0.42rem 0.65rem;
+  color: var(--docs-muted);
+  border-left: 2px solid transparent;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  text-decoration: none;
 }
 
-.sidebar ul li.active > a,
 .sidebar ul li a:hover {
-  color: #e95420;
+  color: var(--docs-text);
+  background: var(--docs-subtle);
+}
+
+.sidebar ul li.active > a {
+  color: var(--docs-link);
+  border-left-color: var(--docs-link);
+  background: #edf5ff;
+  font-weight: 600;
+}
+
+.sidebar ul ul {
+  margin: 0.15rem 0 0.5rem 0.75rem;
+}
+
+.sidebar ul ul li a {
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
+  font-size: 0.8125rem;
+}
+
+.sidebar-nav > p:first-child {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem;
+  color: var(--docs-muted);
+  border: 1px solid var(--docs-border);
+  background: var(--docs-subtle);
+  font-family: var(--code-font-family);
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.sidebar-toggle {
+  top: 0.85rem;
+  left: 0.85rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.55rem;
+  border: 1px solid var(--docs-border);
+  border-radius: var(--docs-radius);
+  background: var(--docs-surface);
+}
+
+.sidebar-toggle span {
+  background-color: var(--docs-text);
+}
+
+.content {
+  left: var(--docs-sidebar-width);
 }
 
 .markdown-section {
-  max-width: 860px;
-  font-size: 16px;
-  line-height: 1.72;
+  max-width: var(--docs-content-width);
+  margin: 0 auto;
+  padding: 4.5rem 3rem 6rem;
+  color: var(--docs-text);
+  background: var(--docs-surface);
+  border-right: 1px solid var(--docs-border);
+  border-left: 1px solid var(--docs-border);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.markdown-section > :first-child {
+  margin-top: 0;
 }
 
 .markdown-section h1,
 .markdown-section h2,
-.markdown-section h3 {
-  color: #2e3440;
-  letter-spacing: -0.02em;
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+  color: var(--docs-text);
+  font-weight: 600;
+  letter-spacing: 0;
+  scroll-margin-top: 2rem;
+}
+
+.markdown-section h1 {
+  margin: 0 0 2rem;
+  font-size: 2.625rem;
+  font-weight: 400;
+  line-height: 1.15;
 }
 
 .markdown-section h2 {
-  padding-bottom: 0.35em;
-  border-bottom: 1px solid #dcdfe4;
+  margin: 3.25rem 0 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--docs-border);
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+.markdown-section h3 {
+  margin: 2.4rem 0 0.8rem;
+  font-size: 1.25rem;
+}
+
+.markdown-section h4 {
+  margin: 2rem 0 0.65rem;
+  font-size: 1rem;
+}
+
+.markdown-section p,
+.markdown-section ul,
+.markdown-section ol,
+.markdown-section blockquote,
+.markdown-section table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
 }
 
 .markdown-section a {
-  color: #e95420;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
 }
 
-.markdown-section code {
-  border-radius: 4px;
-  background: #f0f0f0;
-  font-family: "Ubuntu Mono", monospace;
+.markdown-section strong {
+  font-weight: 600;
 }
 
-.markdown-section pre {
-  border: 1px solid #dcdfe4;
-  border-radius: 8px;
-  background: #f7f7f7;
+.markdown-section ul,
+.markdown-section ol {
+  padding-left: 1.4rem;
+}
+
+.markdown-section li {
+  margin: 0.3rem 0;
+}
+
+.markdown-section li::marker {
+  color: var(--docs-faint);
+}
+
+.markdown-section hr {
+  height: 1px;
+  margin: 2rem 0;
+  border: 0;
+  background: var(--docs-border);
 }
 
 .markdown-section blockquote {
-  border-left: 4px solid #e95420;
-  background: #f7f7f7;
-  color: #5e6272;
+  padding: 1rem 1.15rem;
+  color: var(--docs-text);
+  border: 1px solid #8ab7ff;
+  border-left: 4px solid var(--docs-link);
+  border-radius: var(--docs-radius);
+  background: #edf5ff;
 }
 
-.search input {
-  border-radius: 7px;
-  font-family: "Ubuntu Sans", Ubuntu, sans-serif;
+.markdown-section blockquote > :last-child {
+  margin-bottom: 0;
 }
 
-.search .results-panel {
-  border: 1px solid #dcdfe4;
-  border-radius: 8px;
+.markdown-section code {
+  padding: 0.1em 0.3em;
+  color: var(--docs-text);
+  border: 1px solid var(--docs-border);
+  border-radius: var(--docs-radius);
+  background: var(--docs-subtle);
+  font-family: var(--code-font-family);
+  font-size: 0.875em;
+}
+
+.markdown-section pre {
+  margin: 1.25rem 0;
+  padding: 0;
+  overflow: auto;
+  color: var(--docs-code-text);
+  border: 0;
+  border-radius: var(--docs-radius);
+  background: var(--docs-code);
+  box-shadow: 0 0 0 1px #393939;
+}
+
+.markdown-section pre > code {
+  display: block;
+  padding: 1.2rem 1.35rem;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.markdown-section table {
+  display: table;
+  width: 100%;
+  overflow: visible;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.9375rem;
+}
+
+.markdown-section th,
+.markdown-section td {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--docs-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown-section th {
+  color: var(--docs-text);
+  background: var(--docs-raised);
+  font-weight: 600;
+}
+
+.markdown-section tbody tr:nth-child(even) {
+  background: var(--docs-subtle);
+}
+
+.markdown-section img,
+.markdown-section video {
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown-section .docsify-pagination-container {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--docs-border);
 }
 
 .docsify-copy-code-button {
-  font-family: "Ubuntu Sans", Ubuntu, sans-serif;
+  color: #f4f4f4;
+  border-radius: var(--docs-radius);
+  background: #393939;
+  font-family: var(--base-font-family);
+  font-size: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #f2f2f2;
-    background: #2c2c2c;
+.docsify-copy-code-button:hover {
+  background: #525252;
+}
+
+body .app-nav:not(:empty) {
+  top: 1.1rem;
+  right: 1.5rem;
+  padding: 0.2rem;
+  border: 1px solid var(--docs-border);
+  border-radius: var(--docs-radius);
+  background: var(--docs-surface);
+}
+
+body .app-nav:not(:empty) a {
+  padding: 0.5rem 0.75rem;
+  color: var(--docs-muted);
+  font-size: 0.8125rem;
+}
+
+body .app-nav:not(:empty) a:hover {
+  color: var(--docs-link);
+  background: var(--docs-subtle);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --docs-sidebar-width: 16rem;
   }
 
   .sidebar {
-    color: #f2f2f2;
-    background: #383838;
-    border-right-color: #4c4c4c;
+    padding-top: 1.25rem;
   }
 
-  .sidebar .app-name-link,
-  .markdown-section h1,
-  .markdown-section h2,
-  .markdown-section h3 {
-    color: #f2f2f2;
+  .content {
+    left: 0;
   }
 
-  .sidebar ul li a,
   .markdown-section {
-    color: #c8c8c8;
+    padding: 4.5rem 1.25rem 4rem;
+    border: 0;
   }
 
-  .markdown-section h2,
-  .markdown-section pre,
-  .search .results-panel {
-    border-color: #4c4c4c;
+  .markdown-section h1 {
+    font-size: 2rem;
   }
 
-  .markdown-section code,
-  .markdown-section pre,
+  .markdown-section h2 {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .markdown-section table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --docs-bg: #161616;
+    --docs-surface: #262626;
+    --docs-sidebar: #161616;
+    --docs-text: #f4f4f4;
+    --docs-muted: #c6c6c6;
+    --docs-faint: #a8a8a8;
+    --docs-border: #525252;
+    --docs-border-strong: #8d8d8d;
+    --docs-subtle: #393939;
+    --docs-raised: #393939;
+    --docs-code: #0d0d0d;
+    --docs-code-text: #f4f4f4;
+    --docs-link: #78a9ff;
+    --docs-link-hover: #a6c8ff;
+    --docs-focus: #78a9ff;
+    --docs-selection: #0043ce;
+  }
+
+  ::selection {
+    color: #ffffff;
+    background: var(--docs-selection);
+  }
+
+  .sidebar ul li.active > a {
+    background: #1f3a5f;
+  }
+
   .markdown-section blockquote {
-    background: #383838;
+    border-color: #4589ff;
+    background: #1f3a5f;
+  }
+
+  .markdown-section pre {
+    box-shadow: 0 0 0 1px #525252;
+  }
+
+  .markdown-section tbody tr:nth-child(even) {
+    background: #2f2f2f;
   }
 }

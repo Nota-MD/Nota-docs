@@ -25,7 +25,7 @@ Linux 默认目录是：
 id = "example.hello"
 name = "Hello Nota"
 version = "0.1.0"
-api = 2
+api = "v2.4"
 description = "A minimal Nota extension."
 license = "BSD-2-Clause"
 authors = ["Your Name"]
@@ -83,7 +83,7 @@ NOTA_DEBUG=1 npm run app
 
 ### `api` 不匹配
 
-当前宿主只接受 `api = 2`。
+当前宿主提供 `v2.4`，并接受同一大版本内不高于 `v2.4` 的小版本。
 
 ### `entry` 指向不存在
 

@@ -15,6 +15,7 @@ hello/
 3. [绘制面板](03-panel.md)
 4. [读取文档、保存设置](04-document-and-settings.md)
 5. [多文件、测试与打包](05-packaging.md)
+6. [完整拓展示例：Field Notes](06-complete-demo.md)
 
 完整 API 参考位于主仓库
 [`docs/13-lua-api.md`](https://github.com/Nota-MD/Nota/blob/main/docs/13-lua-api.md)。

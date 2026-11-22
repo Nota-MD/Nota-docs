@@ -1,0 +1,45 @@
+[plugin]
+id          = "nota.example.field-notes"
+name        = "Field Notes"
+version     = "1.0.0"
+api         = "v2.4"
+description = "Inspect the active Markdown document, keep lightweight snapshots, and insert a readable status block at the cursor."
+license     = "BSD-2-Clause"
+authors     = ["Nota contributors"]
+entry       = "main.lua"
+langs       = ["en", "zh-CN"]
+
+capabilities = [
+  "document.read",
+  "document.write",
+  "ui.notify",
+  "ui.panel",
+  "ui.menu",
+  "settings.own",
+  "data.own",
+]
+
+[[settings]]
+key          = "history_limit"
+kind         = "range"
+label        = "Snapshots to keep"
+help         = "Older records are removed after capture."
+min          = 3
+max          = 30
+default      = 8
+step         = 1
+
+[[settings]]
+key          = "include_path"
+kind         = "toggle"
+label        = "Show the document path"
+help         = "The path may contain private working-directory names."
+default_on   = false
+
+[[settings]]
+key          = "note_label"
+kind         = "text"
+label        = "Inserted heading"
+help         = "Used by Insert summary at cursor."
+default_text = "Field note"
+placeholder  = "Field note"

@@ -29,6 +29,9 @@ paper/
   --bg-raised: #fffaf3;
   --accent: #b8542b;
   --accent-fg: #ffffff;
+  --select-text-bg-color: #b9d2ff;
+  --select-text-font-color: #161616;
+  --selection-outline: #2558a8;
 
   --font-doc: "Noto Serif CJK SC", "Songti SC", serif;
   --doc-font-size: 1em;
@@ -98,7 +101,14 @@ pre {
 文档主题不需要写 `[data-ui-style]`，也不应试图修改 `.sidebar`、`.menubar` 等外壳。
 Nota 会把主题选择器机械地限制在编辑区下，外壳规则不会成功泄漏。
 
-## 6. 深色配对
+## 6. 选区
+
+文字选区和表格范围选区共用一套自适应色板。主题可以提供
+`--select-text-bg-color`、`--select-text-font-color` 和
+`--selection-outline`；不足的对比度会由 Nota 根据页面背景与 `--accent`
+自动补足，而不是统一覆盖成黑白。
+
+## 7. 深色配对
 
 独立文档主题可以本身就是深色。准备同时用于浅色和深色的主题时，建议提供两个文件：
 
