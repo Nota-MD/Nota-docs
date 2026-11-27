@@ -30,6 +30,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("./assets/fonts/IBMPlexSans-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
 :root {
   --docs-bg: #f4f4f4;
   --docs-surface: #ffffff;
@@ -50,7 +58,7 @@
   --docs-sidebar-width: 17rem;
   --docs-content-width: 61rem;
   --docs-radius: 0;
-  --base-font-family: "IBM Plex Sans SC", "IBM Plex Sans", "Noto Sans CJK SC",
+  --base-font-family: "IBM Plex Sans", "IBM Plex Sans SC", "Noto Sans CJK SC",
     "Source Han Sans SC", "Microsoft YaHei", sans-serif;
   --code-font-family: "IBM Plex Mono", "Noto Sans Mono CJK SC", monospace;
 }
@@ -90,9 +98,18 @@ body {
   height: 48px;
   align-items: center;
   gap: 10px;
+  padding-right: 16px;
+  border-right: 1px solid #393939;
   color: #ffffff;
   font-weight: 600;
   text-decoration: none;
+}
+
+.nota-carbon-brand::before {
+  width: 18px;
+  height: 18px;
+  background: #0f62fe;
+  content: "";
 }
 
 .nota-carbon-brand span {
@@ -249,7 +266,7 @@ body {
 .markdown-section h4 {
   color: #161616;
   font-family: var(--base-font-family);
-  font-weight: 600;
+  font-weight: 300;
   letter-spacing: 0;
 }
 
@@ -279,6 +296,7 @@ body {
 .markdown-section h3 {
   margin-top: 32px;
   font-size: 20px;
+  font-weight: 400;
 }
 
 .markdown-section a {
