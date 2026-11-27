@@ -9,8 +9,8 @@ Nota 是一款本地优先、所见即所得，并用 Lua 扩展的 Markdown 编
 
 | 项目 | 版本 |
 |---|---|
-| Nota | 0.17.0 Beta |
-| Lua 扩展 API | v2.4 |
+| Nota | 0.18.0 Beta |
+| Lua 扩展 API | v2.5 |
 
 ## 用户文档
 
@@ -45,4 +45,4 @@ Nota 是一款本地优先、所见即所得，并用 Lua 扩展的 Markdown 编
 | [Nota-public-relations](https://github.com/Nota-MD/Nota-public-relations) | 开发故事与软件哲学 |
 | [nota-md.github.io](https://github.com/Nota-MD/nota-md.github.io) | 项目官网 |
 
-> 当前文档对应 Nota 0.17.0 Beta。
+> 当前文档对应 Nota 0.18.0 Beta。

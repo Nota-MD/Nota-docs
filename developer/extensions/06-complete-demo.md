@@ -4,7 +4,7 @@
 
 [`field-notes/`](field-notes/README.md)
 
-示例遵循 Nota 0.17.0 Beta 的扩展 API **v2.4**。把它与官方插件
+示例遵循 Nota 0.18.0 Beta 的扩展 API **v2.5**。把它与官方插件
 [`Nota-plugins`](https://github.com/Nota-MD/Nota-plugins) 一起阅读，比只看 API 清单更容易形成完整手感。
 
 ## 1. 这个拓展做什么
@@ -51,7 +51,7 @@ local inspect = require("inspect")
 [plugin]
 id = "nota.example.field-notes"
 version = "1.0.0"
-api = "v2.4"
+api = "v2.5"
 entry = "main.lua"
 langs = ["en", "zh-CN"]
 
@@ -71,10 +71,10 @@ capabilities = [
 | 字段 | 含义 |
 |---|---|
 | `version = "1.0.0"` | 这个拓展自己的版本 |
-| `api = "v2.4"` | 它要求宿主提供的扩展 API |
+| `api = "v2.5"` | 它要求宿主提供的扩展 API |
 | `nota.version` | 运行时宿主应用版本 |
 
-宿主接受同一大版本内不高于自身的小版本。要求 `v2.5` 的拓展会在 `v2.4` 宿主上被拒绝；按旧版本写的拓展不会因为宿主升级到 `v2.4` 失效。
+宿主接受同一大版本内不高于自身的小版本。要求 `v2.5` 的拓展会在 `v2.5` 宿主上被拒绝；按旧版本写的拓展不会因为宿主升级到 `v2.5` 失效。
 
 ## 4. 能力按用途申请
 
@@ -300,7 +300,7 @@ nota.example.field-notes-1.0.0.nota-plugin
 发布前确认：
 
 - `version` 已增加；
-- `api = "v2.4"` 与目标宿主一致；
+- `api = "v2.5"` 与目标宿主一致；
 - 包内没有测试数据、私钥、缓存或用户文档；
 - 从 `.nota-plugin` 实际安装、重启、停用和卸载；
 - README 写清能力、数据位置与卸载影响。
@@ -312,7 +312,7 @@ nota.example.field-notes-1.0.0.nota-plugin
 - 把快照记录拆成 `history.lua` 纯模块；
 - 增加“比较两次修订”命令，使用 `nota.diff`；
 - 需要工作区文件时再申请 `fs.read`，不要用 `data.own` 假装文件系统；
-- 需要表格能力时按 API v2.4 的 `table.*` 能力逐项申请；
+- 需要表格能力时按 API v2.5 的 `table.*` 能力逐项申请；
 - 需要网络时单独申请 `network.http`，并明确主机和失败方式。
 
 完整示例的价值不在“功能越多越好”，而在于每一层为什么存在、权限边界在哪里、失败时用户看到什么、作者如何验证。

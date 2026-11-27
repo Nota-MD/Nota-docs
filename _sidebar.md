@@ -1,4 +1,4 @@
-<p>Nota 0.17.0 Beta · Extension API v2.4</p>
+<p>Nota 0.18.0 Beta · Extension API v2.5</p>
 
 - [文档首页](/)
 - [用户文档](user/README.md)

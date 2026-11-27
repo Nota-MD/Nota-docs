@@ -3,7 +3,7 @@
 This directory is the complete example used by
 [Build a complete extension](../06-complete-demo.md).
 
-It targets the current Nota extension API, `v2.4`, and demonstrates:
+It targets the current Nota extension API, `v2.5`, and demonstrates:
 
 - a multi-file Lua extension loaded through `require`;
 - commands, menus and an accelerator;
